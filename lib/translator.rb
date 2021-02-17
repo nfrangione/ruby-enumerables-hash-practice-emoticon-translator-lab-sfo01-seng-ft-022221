@@ -24,7 +24,7 @@ def get_japanese_emoticon(path, emoticon)
     emotes[key][:english] == emoticon
   end
   
-  if match_key == true
+  if match_key
     return emotes[match_key][:japanese]
   else
     "Sorry, that emoticon was not found"
@@ -39,7 +39,7 @@ def get_english_meaning(path, emoticon)
     emotes[key][:japanese] == emoticon
   end
 
-  if match_key == true
+  if match_key
     return match_key
   else
     "Sorry, that emoticon was not found"
