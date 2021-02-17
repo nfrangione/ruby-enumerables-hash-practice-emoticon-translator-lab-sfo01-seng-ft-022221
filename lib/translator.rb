@@ -5,7 +5,7 @@ emoticons = YAML.load_file ('lib/emoticons.yml')
 
 def load_library(path)
   # code goes here
-  emoticons = YAML.load_file(yaml_file_path)
+  emoticons = YAML.load_file(path)
   emote_hash = {}
 
   emoticons.each do |key, value|
