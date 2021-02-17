@@ -18,7 +18,7 @@ end
 
 def get_japanese_emoticon(path, emoticon)
   # code goes here
-  emotes = YAML.load_file ('lib/emoticons.yml')
+  emotes = load_library(path)
 
   match_key = emote.keys.find do |key|
     emotes[key][:english] == emoticon
