@@ -20,12 +20,12 @@ def get_japanese_emoticon(path, emoticon)
   # code goes here
   emotes = load_library(path)
 
-  match_key = emotes.keys.find do |key|
+  key_match = emotes.keys.find do |key|
     emotes[key][:english] == emoticon
   end
   
-  if match_key
-    return emotes[match_key][:japanese]
+  if key_match
+    return emotes[key_match][:japanese]
   else
     "Sorry, that emoticon was not found"
   end
@@ -35,12 +35,12 @@ def get_english_meaning(path, emoticon)
   # code goes here
   emotes = load_library(path)
 
-  match_key = emotes.keys.find do |key|
+  key_match = emotes.keys.find do |key|
     emotes[key][:japanese] == emoticon
   end
 
-  if match_key
-    return match_key
+  if key_match
+    return key_match
   else
     "Sorry, that emoticon was not found"
   end
