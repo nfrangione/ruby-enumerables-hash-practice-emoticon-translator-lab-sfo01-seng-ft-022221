@@ -20,12 +20,12 @@ def get_japanese_emoticon(path, emoticon)
   # code goes here
   emote = load_library(yaml_file_path)
 
-  match_key = library.keys.find do |key|
+  match_key = emote.keys.find do |key|
     emote[key][:english] == emoticon
   end
   
   if match_key == true
-    library[matched_key][:japanese]
+    emote[match_key][:japanese]
   else
     "Sorry, that emoticon was not found"
   end
@@ -33,5 +33,15 @@ end
 
 def get_english_meaning(path, emoticon)
   # code goes here
-  
+  emote = load_library(yaml_file_path)
+
+  matched_key = emote.keys.find do |key|
+    emote[key][:japanese] == emoticon
+  end
+
+  if matched_key == true
+    matched_key
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
