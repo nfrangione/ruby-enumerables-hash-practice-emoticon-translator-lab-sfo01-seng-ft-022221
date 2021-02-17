@@ -18,14 +18,14 @@ end
 
 def get_japanese_emoticon(path, emoticon)
   # code goes here
-  emote = load_library(yaml_file_path)
+  emotes = YAML.load_file ('lib/emoticons.yml')
 
   match_key = emote.keys.find do |key|
-    emote[key][:english] == emoticon
+    emotes[key][:english] == emoticon
   end
   
   if match_key == true
-    emote[match_key][:japanese]
+    emotes[match_key][:japanese]
   else
     "Sorry, that emoticon was not found"
   end
@@ -33,7 +33,7 @@ end
 
 def get_english_meaning(path, emoticon)
   # code goes here
-  emote = load_library(yaml_file_path)
+  emotes = 
 
   match_key = emote.keys.find do |key|
     emote[key][:japanese] == emoticon
