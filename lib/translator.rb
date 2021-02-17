@@ -20,7 +20,7 @@ def get_japanese_emoticon(path, emoticon)
   # code goes here
   emotes = load_library(path)
 
-  match_key = emote.keys.find do |key|
+  match_key = emotes.keys.find do |key|
     emotes[key][:english] == emoticon
   end
   
@@ -35,8 +35,8 @@ def get_english_meaning(path, emoticon)
   # code goes here
   emotes = load_library(path)
 
-  match_key = emote.keys.find do |key|
-    emote[key][:japanese] == emoticon
+  match_key = emotes.keys.find do |key|
+    emotes[key][:japanese] == emoticon
   end
 
   if match_key == true
